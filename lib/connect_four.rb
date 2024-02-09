@@ -1,5 +1,8 @@
+require_relative 'game'
+
+
 module ConnectFour
   def self.run
-    true
+  Game.run
   end
 end
