@@ -1,15 +1,19 @@
 class Game
+
+# I didn't use attr_accessor because I don't want to allow the user to change the value of the variables.
+# at the end it is a game and the user should not be able to change the rules of the game.
+
   def initialize
         @screen = Array.new(8) {Array.new(8, ".")}
         @players = ["x", "o"]
         @current_player = @players[0]
   end
-def self.run
+def self.run #This method is used to start the game from connect_four.rb
     new.play
 end
 
 def play
-    while true #Using
+    while true
             display
             column = valid_column
             row = valid_row(column)
