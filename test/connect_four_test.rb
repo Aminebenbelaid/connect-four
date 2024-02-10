@@ -1,9 +1,9 @@
-require "test_helper"
+ require "test_helper"
 
-describe ConnectFour do
-  subject { ConnectFour }
+ describe ConnectFour do
+   subject { ConnectFour }
 
-  it "runs" do
-    assert subject.run
-  end
-end
+   it "runs" do
+     assert subject.run
+   end
+ end
