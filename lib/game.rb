@@ -1,4 +1,5 @@
 class Game
+attr_reader :screen, :players, :current_player
 
 # I didn't use attr_accessor because I don't want to allow the user to change the value of the variables.
 # at the end it is a game and the user should not be able to change the rules of the game.
@@ -10,6 +11,7 @@ class Game
   end
 def self.run #This method is used to start the game from connect_four.rb
     new.play
+    true
 end
 
 def play
@@ -20,7 +22,7 @@ def play
             @screen[row][column] = @current_player
             if won
                 display
-                puts "Player "+ @current_player +" wins!"
+                puts "Player #{@current_player}  wins!"
                 break
             elsif draw
                 display
@@ -71,7 +73,7 @@ private #all methods below are private , because they are not meant to be called
          end
     end
     false
-     end
+  end
 
 
   def check_win(row, column, direction)
