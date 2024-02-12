@@ -4,6 +4,13 @@ require "minitest/autorun"
 describe Game do
   subject { Game.new }
 
+  it "initializes the game correctly" do
+    _( subject.instance_variable_get(:@screen) ).must_equal Array.new(8) {Array.new(8, ".")}
+    _( subject.instance_variable_get(:@players) ).must_equal ["x", "o"]
+    _( subject.instance_variable_get(:@current_player) ).must_equal "x"
+  end
+
+
   it "switches the current player" do
     subject.send(:switch_player)
     assert_equal subject.instance_variable_get(:@current_player), 'o'
