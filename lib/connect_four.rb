@@ -1,9 +1,11 @@
-require_relative 'game'
-
+require_relative "game_logic"
+require_relative "game_display"
 
 module ConnectFour
   def self.run
-  Game.run
-  true
+    game = GameLogic.new
+    show = GameDisplay.new(game)
+    puts show.play, 'Game over!'
+    true
   end
 end
